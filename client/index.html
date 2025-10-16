@@ -57,6 +57,27 @@
                 cursor: pointer;
                 color: black;
             }
+
+            #messages {
+                padding: 0;
+                overflow: auto;
+            }
+
+            #messages > li {
+                list-style: none;
+                padding: 10px;
+                overflow-y: visible;
+                word-break: break-all;
+                margin: 10px;
+            }
+
+            #messages > li:nth-child(even) {
+                background: lightblue;
+            }
+
+            #messages > li:nth-child(odd) {
+                background: lightgray;
+            }
         </style>
         <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
         <script>
