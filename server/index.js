@@ -12,10 +12,12 @@ const io = new Server(server);
 io.on('connection', (socket) => {
    console.log('Usuario conectado');
 
-   console.log(socket);
-
    socket.on('disconnect', () => {
       console.log('Usuario desconectado');
+   });
+
+   socket.on('new_message', (arg) => {
+      io.emit('new_message', arg)
    });
 });
 
