@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/styles/index_styles.css" />
+        <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+        <!--<script src="https://kit.fontawesome.com/48a8c10619.js" crossorigin="anonymous"></script>-->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        />
+        <script>
+            window.onload = main;
+
+            function main() {
+                const socket = io("localhost:1234");
+
+                const form = document.getElementById("form");
+                const input = document.getElementById("input");
+                const messages = document.getElementById("messages");
+
+                //Envío de mensajes al servidor
+                form.addEventListener("submit", (e) => {
+                    e.preventDefault();
+
+                    if (input.value) {
+                        socket.emit("new_message", input.value);
+                        input.value = "";
+                    }
+                });
+
+                //Detección y mostrado de mensajes
+                socket.on("new_message", (msg) => {
+                    const message = `<li>${msg}</li>`;
+                    messages.insertAdjacentHTML("beforeend", message);
+                });
+            }
+        </script>
+        <title>Chat</title>
+    </head>
+    <body>
+        <h1>Chat en tiempo real</h1>
+        <section id="chat">
+            <ul id="messages"></ul>
+            <form id="form">
+                <input
+                    type="text"
+                    name="message"
+                    id="input"
+                    placeholder="Escribe tu mensaje..."
+                    autocomplete="off"
+                />
+                <button type="submit">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </section>
+    </body>
+</html>
