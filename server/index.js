@@ -33,6 +33,10 @@ app.get("/login", (req, res) => {
     res.sendFile(process.cwd() + "/client/public/templates/login.html");
 });
 
+app.get("/register", (req, res) => {
+    res.sendFile(process.cwd() + "/client/public/templates/register.html")
+});
+
 app.use((req, res) => {
     res.status(404).sendFile(
         process.cwd() + "/client/public/templates/404.html"

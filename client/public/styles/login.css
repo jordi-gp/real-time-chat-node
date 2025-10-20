@@ -1,0 +1,103 @@
+:root {
+    --nyanza: #d8f3dcff;
+    --celadon: #b7e4c7ff;
+    --celadon-2: #95d5b2ff;
+    --mint: #74c69dff;
+    --mint-2: #52b788ff;
+    --sea-green: #40916cff;
+    --dartmouth-green: #2d6a4fff;
+    --brunswick-green: #1b4332ff;
+    --dark-green: #081c15ff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    background: var(--sea-green);
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    margin: 0 0 10px 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+#login-box {
+    background: var(--dartmouth-green);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    box-shadow: 10px 10px 5px var(--brunswick-green);
+    width: 100%;
+}
+
+#login-box > img {
+    height: 250px;
+    width: 250px;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-form > div > *, button, #register-box {
+    font-size: 18px;
+}
+
+#login-form > div > input {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid white;
+    margin: 10px;
+    margin-bottom: 15px;
+}
+
+#login-form > div > input::placeholder, i, input, h2 {
+    color: lightgray;
+}
+
+#submit-button {
+    margin-top: 15px;
+    padding: 5px;
+    width: 65%;
+    border-radius: 15px;
+    border: none;
+    background: lightgray;
+}
+
+#submit-button:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 5px var(--brunswick-green);
+    background: var(--celadon);
+}
+
+#register-box {
+    margin-top: 15px;
+    color: lightgray;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--dark-green) !important;
+}
+
+a:visited {
+    text-decoration: none !important;
+    color: lightgray;
+}
