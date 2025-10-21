@@ -1,0 +1,133 @@
+:root {
+    --floral-white: rgb(245, 245, 245);
+    --timberwolf: #ccc5b9ff;
+    --black-olive: #403d39;
+    --eerie-black: #252422;
+    --flame: #eb5e28ff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;    
+    height: 100vh;
+    background: linear-gradient(120deg,rgba(235, 94, 40, 1) 0%, rgba(255, 210, 63, 1) 50%, rgba(237, 221, 83, 1) 100%);
+}
+
+h2 {
+    text-align: center;
+    color: var(--black-olive);
+    margin-bottom: 0;
+}
+
+#icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#icon > img{
+    height: 200px;
+    width: 175px;
+}
+
+/*#region Formulario*/
+@media(max-width: 900px) {
+    #personal_name {
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    #form-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #personal_name > i, #form-box > img, #icon {
+        display: none !important;
+    }
+
+    #register-box {
+        border-radius: 15px !important;
+        width: 700px;
+    }
+}
+
+#form-box {
+    display: flex;
+    flex-direction: row;
+}
+
+#form-box > img {
+    width: 400px;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 10px 10px 5px var(--black-olive);
+}
+
+#register-box {
+    background: var(--floral-white);
+    box-shadow: 10px 10px 5px var(--black-olive);
+    border-radius: 15px 0 0 15px;
+    width: 350px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+#personal_name, #username, #email, #password {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#register_form > div {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#register_form > div > input {
+    width: 90% !important;
+    outline: none;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid var(--black-olive) !important;
+}
+
+#register_form > div > i, input, input::placeholder {
+    color: var(--black-olive) !important;
+    font-size: 16px;
+}
+
+#register_form > div > i {
+    font-size: 18px !important;
+}
+#register_form > div > * {
+    margin: 10px 5px 10px 5px;
+}
+/*#endregion*/
+
+/*#region Botón de enviar*/
+#form_button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#send_form {
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background: var(--flame);
+    font-size: 14px;
+    color: var(--eerie-black) !important;
+}
+
+#send_form:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 5px var(--black-olive);
+}
+/*#endregion*/

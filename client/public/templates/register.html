@@ -1,11 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Registro</title>
-</head>
-<body>
-    <h2>Registro</h2>
-</body>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/styles/register.css" />
+        <script>
+            window.onload = main;
+
+            function main() {
+                const form = document.getElementById("register_form");
+
+                form.addEventListener("submit", (e) => {
+                    e.preventDefault();
+                });
+            }
+        </script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        />
+        <title>Registro</title>
+    </head>
+    <body>
+        <div id="form-box">
+            <section id="register-box">
+                <h2>Crea una nueva cuenta</h2>
+                <div id="icon">
+                    <img src="assets/register-icon.png" alt="Login message icon" />
+                </div>
+                <form id="register_form" method="post">
+                    <div id="personal_name">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <input type="text" autocomplete="off" name="name" placeholder="Nombre" />
+                        <input type="text" autocomplete="off" name="lastname" placeholder="Apellido" />
+                    </div>
+                    <div id="username">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <input type="text" autocomplete="off" name="username" placeholder="Nombre de usuario" />
+                    </div>
+                    <div id="email">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" autocomplete="off" name="email" placeholder="Correo Electrónico" />
+                    </div>
+                    <div id="password">
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" autocomplete="off" name="password" placeholder="Contraseña" />
+                    </div>
+                    <div id="form_button">
+                        <button type="submit" id="send_form">Crear cuenta</button>
+                    </div>
+                </form>
+            </section>
+            <img src="assets/register-banner.jpg" alt="Register banner" />
+        </div>
+    </body>
 </html>
