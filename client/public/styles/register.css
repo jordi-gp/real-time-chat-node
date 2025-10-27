@@ -63,7 +63,7 @@ h2 {
 }
 
 #form-box > img {
-    width: 400px;
+    width: 375px;
     border-radius: 0 15px 15px 0;
     box-shadow: 10px 10px 5px var(--black-olive);
 }
@@ -107,6 +107,26 @@ h2 {
 }
 #register_form > div > * {
     margin: 10px 5px 10px 5px;
+}
+
+#login-box {
+    text-align: center;
+    color: var(--eerie-black);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+    color: var(--flame) !important;
+}
+
+a:visited {
+    text-decoration: none !important;
+    color: var(--eerie-black);
+    text-decoration: none !important;
 }
 /*#endregion*/
 

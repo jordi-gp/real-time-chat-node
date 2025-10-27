@@ -14,13 +14,32 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
     background: var(--verdigris);
+    overflow: hidden;
+}
+
+#logout {
+    position: absolute;
+    margin-top: 15px;
+    right: 15px;
+    border-radius: 50%;
+    border: none;
+    background: lightblue;
+    text-align: end;
+    padding: 15px;
+    font-size: 22px;
+}
+
+#logout:hover {
+    cursor: pointer;
+}
+
+#chat-block {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    overflow: hidden;
 }
 
 #chat {
@@ -81,7 +100,7 @@ body {
     overflow-y: visible;
     word-break: break-all;
     margin: 10px;
-    border-radius: 15px;
+    border-radius: 5px;
 }
 
 #messages > li:last-child {

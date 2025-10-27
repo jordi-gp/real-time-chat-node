@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/styles/index_styles.css" />
+        <link rel="stylesheet" href="/styles/index.css" />
         <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
         <!--<script src="https://kit.fontawesome.com/48a8c10619.js" crossorigin="anonymous"></script>-->
         <link
@@ -14,7 +14,11 @@
             window.onload = main;
 
             function main() {
-                const socket = io("localhost:1234");
+                const socket = io('localhost:1234', {
+                    auth: {
+                        serverOffset: 0
+                    }
+                });
 
                 const form = document.getElementById("form");
                 const input = document.getElementById("input");
@@ -31,29 +35,36 @@
                 });
 
                 //Detección y mostrado de mensajes
-                socket.on("new_message", (msg) => {
+                socket.on("new_message", (msg, serverOffset) => {
                     const message = `<li>${msg}</li>`;
                     messages.insertAdjacentHTML("beforeend", message);
+                    socket.auth.serverOffset = serverOffset;
+                    messages.scrollTop = messages.scrollHeight;
                 });
             }
         </script>
         <title>Chat</title>
     </head>
     <body>
-        <section id="chat">
-            <ul id="messages"></ul>
-            <form id="form">
-                <input
-                    type="text"
-                    name="message"
-                    id="input"
-                    placeholder="Escribe tu mensaje..."
-                    autocomplete="off"
-                />
-                <button type="submit">
-                    <i class="fa-solid fa-paper-plane"></i>
-                </button>
-            </form>
-        </section>
+        <button id="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+        <div id="chat-block">
+            <section id="chat">
+                <ul id="messages"></ul>
+                <form id="form">
+                    <input
+                        type="text"
+                        name="message"
+                        id="input"
+                        placeholder="Escribe tu mensaje..."
+                        autocomplete="off"
+                    />
+                    <button type="submit">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </section>
+        </div>
     </body>
 </html>
